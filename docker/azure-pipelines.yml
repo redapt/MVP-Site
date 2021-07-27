@@ -90,6 +90,14 @@ stages:
             inputs:
               artifact: Sitecore.MVP-$(Build.BuildNumber)
               targetPath: '$(System.ArtifactsDirectory)'
+
+          - task: PowerShell@2
+            displayName: Whats my ip
+            inputs:
+              targetType: 'inline'
+              script: |
+                Invoke-RestMethod http://ipinfo.io/json | Select -exp ip
+              workingDirectory: '$(System.ArtifactsDirectory)'
           - task: Kubernetes@1
             displayName: Create MVP-Staging Namespace
             inputs:
