@@ -16,6 +16,7 @@ variables:
   vmImageName: 'windows-latest'
   targetBuildNumber: "20210803.1"
   targetBuildPipeline: "redapt.MVP-Site"
+  targetBuildPipelineProject: "kingcounty-mvp"
 
 stages:
 - stage: Deploy
@@ -33,9 +34,13 @@ stages:
           - task: DownloadPipelineArtifact@2
             displayName: "Download Build Artifact"
             inputs:
+              source: 'specific'
               artifact: Sitecore.MVP-$(targetBuildNumber)
               targetPath: '$(System.ArtifactsDirectory)'
+              project: '$(targetBuildPipelineProject)'
               pipeline: '$(targetBuildPipeline)'
+              runBranch: '$(Build.SourceBranchName)'
+              runVersion: 'latestFromBranch'
 
           - task: PowerShell@2
             displayName: Whats my ip
@@ -199,9 +204,13 @@ stages:
           - task: DownloadPipelineArtifact@2
             displayName: "Download Build Artifact"
             inputs:
+              source: 'specific'
               artifact: Sitecore.MVP-$(targetBuildNumber)
               targetPath: '$(System.ArtifactsDirectory)'
+              project: '$(targetBuildPipelineProject)'
               pipeline: '$(targetBuildPipeline)'
+              runBranch: '$(Build.SourceBranchName)'
+              runVersion: 'latestFromBranch'
           - task: PowerShell@2
             displayName: Deserialize Content
             inputs:
