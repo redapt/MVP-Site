@@ -242,8 +242,7 @@ stages:
               targetPath: '$(System.ArtifactsDirectory)'
               project: '$(targetBuildPipelineProject)'
               pipeline: '$(targetBuildPipeline)'
-              runBranch: '$(Build.SourceBranchName)'
-              runVersion: 'latestFromBranch'
+              runVersion: 'latest'
               allowFailedBuilds: true
               allowPartiallySucceededBuilds: true
 
