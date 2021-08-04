@@ -39,8 +39,9 @@ stages:
               targetPath: '$(System.ArtifactsDirectory)'
               project: '$(targetBuildPipelineProject)'
               pipeline: '$(targetBuildPipeline)'
-              runBranch: '$(Build.SourceBranchName)'
-              runVersion: 'latestFromBranch'
+              runVersion: 'latest'
+              allowFailedBuilds: true
+              allowPartiallySucceededBuilds: true
 
           - task: PowerShell@2
             displayName: Whats my ip
@@ -211,6 +212,9 @@ stages:
               pipeline: '$(targetBuildPipeline)'
               runBranch: '$(Build.SourceBranchName)'
               runVersion: 'latestFromBranch'
+              allowFailedBuilds: true
+              allowPartiallySucceededBuilds: true
+              
           - task: PowerShell@2
             displayName: Deserialize Content
             inputs:
