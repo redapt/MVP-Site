@@ -15,6 +15,7 @@ variables:
   # Agent VM image name
   vmImageName: 'windows-latest'
   targetBuildNumber: "20210803.1"
+  targetBuildPipeline: "redapt.MVP-Site"
 
 stages:
 - stage: Deploy
@@ -34,6 +35,7 @@ stages:
             inputs:
               artifact: Sitecore.MVP-$(targetBuildNumber)
               targetPath: '$(System.ArtifactsDirectory)'
+              pipeline: '$(targetBuildPipeline)'
 
           - task: PowerShell@2
             displayName: Whats my ip
@@ -199,6 +201,7 @@ stages:
             inputs:
               artifact: Sitecore.MVP-$(targetBuildNumber)
               targetPath: '$(System.ArtifactsDirectory)'
+              pipeline: '$(targetBuildPipeline)'
           - task: PowerShell@2
             displayName: Deserialize Content
             inputs:
