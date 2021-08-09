@@ -18,7 +18,7 @@ variables:
   targetBuildPipeline: "redapt.MVP-Site"
   targetBuildPipelineProject: "kingcounty-mvp"
   SITECORE_DATABASE_SERVER_NAME: mssql
-  SITECORE_SOLR_CONNECTION_STRING: https://solr:8983/solr
+  SITECORE_SOLR_CONNECTION_STRING: http://solr:8983/solr
   SITECORE_ADMIN_PASSWORD: d3faultch4ngem3
   SITECORE_CORE_DATABASE_USER: "sa"
   SITECORE_CORE_DATABASE_PASSWORD: d3faultch4ngem3
