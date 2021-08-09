@@ -19,6 +19,40 @@ variables:
   vmImageName: 'windows-latest'
   targetBuildNumber: $(Build.BuildNumber)
 
+  # Agent VM image name
+  # vmImageName: 'windows-latest'
+  # targetBuildNumber: "20210804.3"
+  # targetBuildPipeline: "redapt.MVP-Site"
+  # targetBuildPipelineProject: "kingcounty-mvp"
+  SITECORE_DATABASE_SERVER_NAME: mssql
+  SITECORE_SOLR_CONNECTION_STRING: https://solr:8983/solr
+  SITECORE_ADMIN_PASSWORD: d3faultch4ngem3
+  SITECORE_CORE_DATABASE_USER: "sa"
+  SITECORE_CORE_DATABASE_PASSWORD: d3faultch4ngem3
+  SITECORE_DATABASE_USERNAME: "sa"
+  SITECORE_DATABASE_PASSWORD: d3faultch4ngem3
+  SITECORE_FORMS_DATABASE_USERNAME: "sa"
+  SITECORE_FORMS_DATABASE_PASSWORD: d3faultch4ngem3
+  SITECORE_DATABASE_ELASTIC_POOL_NAME: ""
+  SITECORE_MASTER_DATABASE_USERNAME: "sa"
+  SITECORE_MASTER_DATABASE_PASSWORD: d3faultch4ngem3
+  SITECORE_WEB_DATABASE_USERNAME: "sa"
+  SITECORE_WEB_DATABASE_PASSWORD: d3faultch4ngem3
+  SITECORE_IDENTITY_SECRET: d3faultch4ngem3
+  SITECORE_MVP_IDENTITY_SECRET: d3faultch4ngem3
+  SITECORE_TELERIK_ENCRYPTION_KEY: d3faultch4ngem3
+  # SITECORE_DEMO_TLS_CRT: ""
+  # SITECORE_DEMO_TLS_KEY: ""
+  # SITECORE_IDENTITY_CERTIFICATE: ""
+  # SITECORE_IDENTITY_CERTIFICATE_PASSWORD: ""
+  # SITECORE_LICENSE: ""
+  STAGING_CD_HOST: cd.redapt.com
+  STAGING_CM_HOST: cm.redapt.com
+  STAGING_ID_HOST: id.redapt.com
+  STAGING_HOST: site.redapt.com
+
+
+
 stages:
 - stage: Build
   displayName: Build Images + Push to ACR
