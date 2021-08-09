@@ -16,5 +16,7 @@ spec:
             secretKeyRef:
               name: sitecore-solr
               key: sitecore-solr-connection-string.txt
+        - name: SOLR_CORE_PREFIX_NAME
+          value: sitecore
       restartPolicy: Never
   backoffLimit: 5

@@ -34,6 +34,8 @@ spec:
         - containerPort: 80
         imagePullPolicy: Always
         env:
+        - name: SOLR_CORE_PREFIX_NAME
+          value: sitecore
         - name: Sitecore_InstanceName
           valueFrom:
             fieldRef:
