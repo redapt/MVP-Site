@@ -14,7 +14,7 @@ resources:
 variables:
   # Agent VM image name
   vmImageName: 'windows-latest'
-  targetBuildNumber: "20210804.3"
+  targetBuildNumber: "20210809.1"
   targetBuildPipeline: "redapt.MVP-Site"
   targetBuildPipelineProject: "kingcounty-mvp"
   SITECORE_DATABASE_SERVER_NAME: mssql
