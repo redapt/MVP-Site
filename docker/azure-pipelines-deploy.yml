@@ -44,8 +44,8 @@ variables:
   STAGING_ID_HOST: id.redapt.com
   STAGING_HOST: site.redapt.com
   SITECORE_PUBLIC_NUGET_FEED: https://sitecore.myget.org/F/sc-packages/api/v3/index.json
-  ID_SERVER_URL: id.redapt.com
-  CM_URL: cm.redapt.com
+  ID_SERVER_URL: http://id.redapt.com
+  CM_URL: http://cm.redapt.com
   BUILD_CONFIGURATION: release
   # DOCKER_COMPOSE_ARGS: ""
   # AZURE_SUBSCRIPTION: "serviceconnectionARM"
