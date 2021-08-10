@@ -20,8 +20,6 @@ variables:
   targetBuildNumber: $(Build.BuildNumber)
 
   # Agent VM image name
-  # vmImageName: 'windows-latest'
-  # targetBuildNumber: "20210804.3"
   # targetBuildPipeline: "redapt.MVP-Site"
   # targetBuildPipelineProject: "kingcounty-mvp"
   SITECORE_DATABASE_SERVER_NAME: mssql
@@ -50,6 +48,8 @@ variables:
   STAGING_CM_HOST: cm.redapt.com
   STAGING_ID_HOST: id.redapt.com
   STAGING_HOST: site.redapt.com
+  SITECORE_PUBLIC_NUGET_FEED: https://sitecore.myget.org/F/sc-packages/api/v3/index.json
+
 
 
 

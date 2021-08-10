@@ -43,6 +43,7 @@ variables:
   STAGING_CM_HOST: cm.redapt.com
   STAGING_ID_HOST: id.redapt.com
   STAGING_HOST: site.redapt.com
+  SITECORE_PUBLIC_NUGET_FEED: https://sitecore.myget.org/F/sc-packages/api/v3/index.json
 
 
 
