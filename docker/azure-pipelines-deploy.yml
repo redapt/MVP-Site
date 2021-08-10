@@ -14,9 +14,14 @@ resources:
 variables:
   # Agent VM image name
   vmImageName: 'windows-latest'
-  targetBuildNumber: "20210810.1"
+
+  # This is set because artifacts in the k8s directory were modified, to allow a deploy only pipeline,
+  # and this is the variable that was substituted for the image tag, everywhere. The other variables reference
+  # a prior build pipeline run to deploy, by project, pipeline, and build number.
+  targetBuildNumber: "20210810.2"
   targetBuildPipeline: "redapt.MVP-Site"
   targetBuildPipelineProject: "kingcounty-mvp"
+
   SITECORE_DATABASE_SERVER_NAME: mssql
   SITECORE_SOLR_CONNECTION_STRING: http://solr:8983/solr
   SITECORE_ADMIN_PASSWORD: D3faultch4ngem3!
@@ -34,21 +39,33 @@ variables:
   SITECORE_IDENTITY_SECRET: D3faultch4ngem3!
   SITECORE_MVP_IDENTITY_SECRET: D3faultch4ngem3!
   SITECORE_TELERIK_ENCRYPTION_KEY: D3faultch4ngem3!
-  # SITECORE_DEMO_TLS_CRT: ""
-  # SITECORE_DEMO_TLS_KEY: ""
-  # SITECORE_IDENTITY_CERTIFICATE: ""
-  # SITECORE_IDENTITY_CERTIFICATE_PASSWORD: ""
-  # SITECORE_LICENSE: ""
   STAGING_CD_HOST: cd.redapt.com
   STAGING_CM_HOST: cm.redapt.com
   STAGING_ID_HOST: id.redapt.com
   STAGING_HOST: site.redapt.com
   SITECORE_PUBLIC_NUGET_FEED: https://sitecore.myget.org/F/sc-packages/api/v3/index.json
+  ID_SERVER_URL: id.redapt.com
+  CM_URL: cm.redapt.com
+  BUILD_CONFIGURATION: release
+  # DOCKER_COMPOSE_ARGS: ""
+  # AZURE_SUBSCRIPTION: "serviceconnectionARM"
+  # AKS_SERVICE_ENDPOINT: "serviceconnection-k8s2-mvp-staging"
+  # ACR_ENDPOINT: "serviceconnectionforACR"
+  # AZURE_CONTAINER_REGISTRY: "redaptdevkcacr.azurecr.io"
+  # MVP_DOCKER_REGISTRY: "redaptdevkcacr.azurecr.io/"
 
+  # In this context, SITECORE_IDENTITY_CERTIFICATE, needs to be the pfx base64 encoded.
+  # ie: cert.pfx | base64 > SITECORE_IDENTITY_CERTIFICATE
+  # SITECORE_IDENTITY_CERTIFICATE: "**********"
+  # SITECORE_IDENTITY_CERTIFICATE_PASSWORD: "***********"
 
+  # In this context, SITECORE_LICENSE, needs to be the license.xml file gzipped, THEN base64 encoded.
+  # ie: gzip -c filename.ext | base64 > SITECORE_LICENSE
+  # SITECORE_LICENSE: "**************"
 
-
-
+  # Not requred for getting the site running, strictly used to configure the ingress controller.
+  # SITECORE_DEMO_TLS_CRT: "******"
+  # SITECORE_DEMO_TLS_KEY: "******"
 
 
 stages:
