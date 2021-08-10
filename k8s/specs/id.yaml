@@ -29,7 +29,7 @@ spec:
         kubernetes.io/os: windows
       containers:
       - name: sitecore-xm1-id
-        image: $(ACR_ENDPOINT)/mvp-id:$(targetBuildNumber)-$(Build.SourceBranchName)
+        image: $(AZURE_CONTAINER_REGISTRY)/mvp-id:$(targetBuildNumber)-$(Build.SourceBranchName)
         ports:
         - containerPort: 80
         imagePullPolicy: Always

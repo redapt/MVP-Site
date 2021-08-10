@@ -29,7 +29,7 @@ spec:
         kubernetes.io/os: windows
       containers:
       - name: sitecore-xm1-rendering
-        image: $(ACR_ENDPOINT)/mvp-rendering:$(targetBuildNumber)-$(Build.SourceBranchName)
+        image: $(AZURE_CONTAINER_REGISTRY)/mvp-rendering:$(targetBuildNumber)-$(Build.SourceBranchName)
         ports:
         - containerPort: 80
         imagePullPolicy: Always
