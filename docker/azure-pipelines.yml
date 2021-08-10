@@ -50,6 +50,7 @@ variables:
   ID_SERVER_URL: http://id.redapt.com
   CM_URL: http://cm.redapt.com
   BUILD_CONFIGURATION: release
+  IP_WHITELIST: "0.0.0.0/0"
   # DOCKER_COMPOSE_ARGS: ""
   # AZURE_SUBSCRIPTION: "serviceconnectionARM"
   # AKS_SERVICE_ENDPOINT: "serviceconnection-k8s2-mvp-staging"
